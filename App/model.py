@@ -242,10 +242,13 @@ def hasSearchPath(analyzer, destStation, method):
         method (str, optional): algoritmo de busqueda. Por defecto es "dfs"
     """
     # TODO Lab 11, ejecutar hasPathTo por dfs
+    search= analyzer['paths']
     if method == "dfs":
+        dfs.DepthFirstSearch(search, destStation)
         return None
     # TODO Lab 11, ejecutar hasPathTo por bfs
-    elif method == "bfs":
+    elif method == "paths":
+        bfs.BreathFirstSearch(search, destStation)
         return None
 
 
@@ -264,10 +267,13 @@ def searchPathTo(analyzer, destStation, method):
     """
     path = None
     # TODO Lab 11, ejecutar pathTo por dfs
+    search= analyzer['paths']
     if method == "dfs":
+        dfs.DepthFirstSearch(search, destStation)
         pass
     # TODO Lab 11, ejecutar pathTo por bfs
     elif method == "bfs":
+        dfs.DepthFirstSearch(search, destStation)
         pass
     return path
 
