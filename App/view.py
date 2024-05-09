@@ -94,7 +94,10 @@ def optionFour(cont, initialStation):
 
 
 def optionFive(cont, initialStation, searchMethod):
+    controller.searchPaths(cont, initialStation, searchMethod)
+
     # TODO Lab 11, conectar con la funcion del controller searchPaths
+    
     pass
 
 
@@ -125,6 +128,8 @@ def optionEight(cont):
 
 def optionNine(cont, destStation, searchMethod):
     # TODO Lab 11, conectar con la funcion del controller hasSearchPath
+    controller.hasSearchPath(cont, destStation, searchMethod)
+    
     haspath = None
     print(haspath)
 
