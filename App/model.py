@@ -219,12 +219,14 @@ def searchPaths(analyzer, initialStation, method):
     Returns:
         dict: devuelve el analyzer del modelo
     """
+    conecctions= analyzer['conecctions']
     # TODO Lab 11, ejecutar DepthFirstSearch de dfs
     if method == "dfs":
-        
+        dfs.DepthFirstSearch(conecctions, initialStation)
         pass
     # TODO Lab 11, ejecutar BreadhtFisrtSearch de bfs
     elif method == "bfs":
+        bfs.BreathFirstSearch(conecctions, initialStation)
         pass
     return analyzer
 
