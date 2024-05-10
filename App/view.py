@@ -94,8 +94,8 @@ def optionFour(cont, initialStation):
 
 
 def optionFive(cont, initialStation, searchMethod):
-    controller.searchPaths(cont, initialStation, searchMethod)
-
+    path=controller.searchPaths(cont, initialStation, searchMethod)
+    print(path)
     # TODO Lab 11, conectar con la funcion del controller searchPaths
     
     pass
@@ -128,15 +128,14 @@ def optionEight(cont):
 
 def optionNine(cont, destStation, searchMethod):
     # TODO Lab 11, conectar con la funcion del controller hasSearchPath
-    controller.hasSearchPath(cont, destStation, searchMethod)
-    
-    haspath = None
+    haspath = controller.hasSearchPath(cont, destStation, searchMethod)
     print(haspath)
 
 
 def optionTen(cont, destStation, searchMethod):
     # TODO Lab 11, conectar con la funcion del controller searchPathTo
-    path = None
+    
+    path = controller.searchPathTo(cont, destStation, searchMethod)
     if path is not None:
         pass
     else:
@@ -150,6 +149,7 @@ Menu principal
 
 def thread_cycle():
     initialStation  = None
+    searchMethod=None
     while True:
         printMenu()
         inputs = input('Seleccione una opción para continuar\n>')
@@ -171,6 +171,8 @@ def thread_cycle():
 
         elif int(inputs) == 5:
             # TODO Lab 11, completar inputs opt 5, searchMethod, initialStation
+            searchMethod= input('Ingrese metodo: dfs o bfs')
+            optionFive(cont, initialStation, searchMethod)
             pass
 
         elif int(inputs) == 6:
@@ -186,10 +188,14 @@ def thread_cycle():
 
         elif int(inputs) == 9:
             # TODO Lab 11, completar inputs opt 9, destStation
+            destStation = input("Estación destino (Ej: 15151-10): ")
+            optionNine(cont, destStation, searchMethod)
             pass
 
         elif int(inputs) == 10:
+            destStation = input("Estación destino (Ej: 15151-10): ")
             # TODO Lab 11, completar inputs opt 10, destStation
+            optionTen(cont, destStation, searchMethod)
             pass
 
         else:
