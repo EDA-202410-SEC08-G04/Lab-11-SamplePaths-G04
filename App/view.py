@@ -94,11 +94,12 @@ def optionFour(cont, initialStation):
 
 
 def optionFive(cont, initialStation, searchMethod):
+    print('Calculando caminos de busqueda')
     path=controller.searchPaths(cont, initialStation, searchMethod)
-    print(path)
+    print("FIN!")
+
     # TODO Lab 11, conectar con la funcion del controller searchPaths
     
-    pass
 
 
 def optionSix(cont, initialStation, destStation):
@@ -134,10 +135,11 @@ def optionNine(cont, destStation, searchMethod):
 
 def optionTen(cont, destStation, searchMethod):
     # TODO Lab 11, conectar con la funcion del controller searchPathTo
-    
     path = controller.searchPathTo(cont, destStation, searchMethod)
-    if path is not None:
-        pass
+    if path is not None: 
+        while (not stack.isEmpty(path)):
+            path_ = stack.pop(path)
+            print(path_)
     else:
         print('No hay camino')
 

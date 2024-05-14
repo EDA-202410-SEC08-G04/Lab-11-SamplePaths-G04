@@ -222,12 +222,14 @@ def searchPaths(analyzer, initialStation, method):
     conecctions= analyzer['connections']
     # TODO Lab 11, ejecutar DepthFirstSearch de dfs
     if method == "dfs":
-        dfs.DepthFirstSearch(conecctions, initialStation)
-        pass
+        analyzer['paths']=dfs.DepthFirstSearch(conecctions, initialStation)
+        analyzer['search']='dfs'
+        
     # TODO Lab 11, ejecutar BreadhtFisrtSearch de bfs
     elif method == "bfs":
         bfs.BreathFirstSearch(conecctions, initialStation)
-        pass
+        analyzer['search']='bfs'
+        
     return analyzer
 
 
@@ -244,12 +246,10 @@ def hasSearchPath(analyzer, destStation, method):
     # TODO Lab 11, ejecutar hasPathTo por dfs
     search= analyzer['paths']
     if method == "dfs":
-        dfs.DepthFirstSearch(search, destStation)
-        return None
+        return dfs.hasPathTo(search, destStation)
     # TODO Lab 11, ejecutar hasPathTo por bfs
-    elif method == "paths":
-        bfs.BreathFirstSearch(search, destStation)
-        return None
+    elif method == "bfs":
+        return bfs.hasPathTo(search, destStation)
 
 
 def searchPathTo(analyzer, destStation, method):
@@ -269,12 +269,11 @@ def searchPathTo(analyzer, destStation, method):
     # TODO Lab 11, ejecutar pathTo por dfs
     search= analyzer['paths']
     if method == "dfs":
-        dfs.DepthFirstSearch(search, destStation)
-        pass
+        path=dfs.pathTo(search, destStation)
     # TODO Lab 11, ejecutar pathTo por bfs
     elif method == "bfs":
-        dfs.DepthFirstSearch(search, destStation)
-        pass
+        path=dfs.pathTo(search, destStation)
+
     return path
 
 
