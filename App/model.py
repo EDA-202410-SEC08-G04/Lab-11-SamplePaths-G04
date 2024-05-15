@@ -222,9 +222,19 @@ def searchPaths(analyzer, initialStation, method):
     # TODO Lab 11, ejecutar DepthFirstSearch de dfs
     if method == "dfs":
         analyzer['paths']=dfs.DepthFirstSearch(conecctions, initialStation)
+<<<<<<< HEAD
     # TODO Lab 11, ejecutar BreadhtFisrtSearch de bfs
     elif method == "bfs":
          analyzer['paths']=bfs.BreathFirstSearch(conecctions, initialStation)
+=======
+        analyzer['search']='dfs'
+        
+    # TODO Lab 11, ejecutar BreadhtFisrtSearch de bfs
+    elif method == "bfs":
+        bfs.BreathFirstSearch(conecctions, initialStation)
+        analyzer['search']='bfs'
+        
+>>>>>>> f00a1e959918c8963b2ba0e997467c5cbdacdf59
     return analyzer
 
 
@@ -241,12 +251,19 @@ def hasSearchPath(analyzer, destStation, method):
     # TODO Lab 11, ejecutar hasPathTo por dfs
     search= analyzer['paths']
     if method == "dfs":
+<<<<<<< HEAD
         analyzer['paths']=dfs.DepthFirstSearch(search, destStation)
         return None
     # TODO Lab 11, ejecutar hasPathTo por bfs
     elif method == "bfs":
         analyzer['paths']=bfs.BreathFirstSearch(search, destStation)
         return None
+=======
+        return dfs.hasPathTo(search, destStation)
+    # TODO Lab 11, ejecutar hasPathTo por bfs
+    elif method == "bfs":
+        return bfs.hasPathTo(search, destStation)
+>>>>>>> f00a1e959918c8963b2ba0e997467c5cbdacdf59
 
 
 def searchPathTo(analyzer, destStation, method):
@@ -266,12 +283,20 @@ def searchPathTo(analyzer, destStation, method):
     # TODO Lab 11, ejecutar pathTo por dfs
     search= analyzer['paths']
     if method == "dfs":
+<<<<<<< HEAD
         path=dfs.DepthFirstSearch(search, destStation)
         pass
     # TODO Lab 11, ejecutar pathTo por bfs
     elif method == "bfs":
         path=bfs.BreathFirstSearch(search, destStation)
         pass
+=======
+        path=dfs.pathTo(search, destStation)
+    # TODO Lab 11, ejecutar pathTo por bfs
+    elif method == "bfs":
+        path=dfs.pathTo(search, destStation)
+
+>>>>>>> f00a1e959918c8963b2ba0e997467c5cbdacdf59
     return path
 
 
