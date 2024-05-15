@@ -283,20 +283,11 @@ def searchPathTo(analyzer, destStation, method):
     # TODO Lab 11, ejecutar pathTo por dfs
     search= analyzer['paths']
     if method == "dfs":
-<<<<<<< HEAD
         path=dfs.DepthFirstSearch(search, destStation)
-        pass
     # TODO Lab 11, ejecutar pathTo por bfs
     elif method == "bfs":
         path=bfs.BreathFirstSearch(search, destStation)
-        pass
-=======
-        path=dfs.pathTo(search, destStation)
-    # TODO Lab 11, ejecutar pathTo por bfs
-    elif method == "bfs":
-        path=dfs.pathTo(search, destStation)
 
->>>>>>> f00a1e959918c8963b2ba0e997467c5cbdacdf59
     return path
 
 
